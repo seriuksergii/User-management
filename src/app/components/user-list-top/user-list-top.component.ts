@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCreateUserComponent } from '../modal-create-user/modal-create-user.component';
 
 @Component({
   selector: 'app-user-list-top',
@@ -10,4 +12,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './user-list-top.component.scss',
   imports: [MatToolbarModule, MatButtonModule, MatIconModule],
 })
-export class UserListTopComponent {}
+export class UserListTopComponent {
+  constructor(private _dialog: MatDialog) {}
+
+  openAddUserForm() {
+    this._dialog.open(ModalCreateUserComponent);
+  }
+}
