@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalCreateUserComponent } from './modal-create-user.component';
+import { ModalCreateUserComponent } from './modal-create-edit-user.component';
 
 describe('ModalCreateUserComponent', () => {
   let component: ModalCreateUserComponent;
@@ -8,9 +8,8 @@ describe('ModalCreateUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModalCreateUserComponent]
-    })
-    .compileComponents();
+      imports: [ModalCreateUserComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ModalCreateUserComponent);
     component = fixture.componentInstance;

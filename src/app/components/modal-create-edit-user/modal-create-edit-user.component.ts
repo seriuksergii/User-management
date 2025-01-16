@@ -26,10 +26,10 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     CommonModule,
   ],
-  templateUrl: './modal-create-user.component.html',
-  styleUrl: './modal-create-user.component.scss',
+  templateUrl: './modal-create-edit-user.component.html',
+  styleUrl: './modal-create-edit-user.component.scss',
 })
-export class ModalCreateUserComponent {
+export class ModalCreateEditUserComponent {
   skils = new FormControl('');
   skilsList: string[] = ['Angular', 'React', 'C++', 'Phyton', 'C#', 'Java'];
 
@@ -40,7 +40,7 @@ export class ModalCreateUserComponent {
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      createdAt: ['', [Validators.required]],
+      createdAt: '',
       tags: [[], []],
       description: '',
     });
