@@ -1,0 +1,18 @@
+.container {
+  width: 1366px;
+  margin: 0 auto;
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 4px;
+  font-size: 12px;
+}
