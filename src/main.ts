@@ -3,5 +3,9 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { provideHttpClient } from '@angular/common/http';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+const config = {
+  ...appConfig,
+  providers: [...(appConfig.providers || []), provideHttpClient()],
+};
+
+bootstrapApplication(AppComponent, config).catch((err) => console.error(err));
