@@ -14,15 +14,15 @@
           <input matInput type="text" placeholder="Enter your last name" required formControlName="lastName">
         </mat-form-field>
       </div>
-      <div class="example-container">
-        <mat-form-field appearance="outline">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" (blur)="updateErrorMessage()" required />
-          @if (email.invalid) {
-          <mat-error>{{errorMessage()}}</mat-error>
-          }
-        </mat-form-field>
-      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" (blur)="updateErrorMessage()" required />
+        @if (email.invalid) {
+        <mat-error>{{errorMessage()}}</mat-error>
+        }
+      </mat-form-field>
+
       <div class="date">
         <mat-form-field appearance="outline">
           <mat-label>Created at</mat-label>
@@ -49,9 +49,10 @@
         </mat-form-field>
       </div>
       <div mat-dialog-actions class="buttons">
-        <button mat-flat-button
+        <button mat-flat-button type="button" [mat-dialog-close]="false"
           style="background-color: #fff; border: 1px solid #1E96FC; color: #1E96FC;">Cancel</button>
-        <button mat-flat-button style="background-color:#1E96FC; color: #fff;" type="submit">Create</button>
+        <button mat-flat-button style="background-color:#1E96FC; color: #fff;" type="submit">{{data ? 'Update' :
+          'Create'}}</button>
       </div>
     </div>
   </form>

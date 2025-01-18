@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   FormBuilder,
@@ -16,6 +22,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormGroup } from '@angular/forms';
 import { UsersService } from '../../service/users.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface User {
   firstName: string;
@@ -37,12 +46,14 @@ export interface User {
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatButtonModule,
+    MatDialogModule,
   ],
   templateUrl: './user-add-edit.component.html',
   styleUrl: './user-add-edit.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserAddEditComponent {
+export class UserAddEditComponent implements OnInit {
   userForm: FormGroup;
 
   tags = new FormControl('');
@@ -62,7 +73,8 @@ export class UserAddEditComponent {
   constructor(
     private fb: FormBuilder,
     private userService: UsersService,
-    private dialogRef: MatDialogRef<UserAddEditComponent>
+    private dialogRef: MatDialogRef<UserAddEditComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     merge(this.email.statusChanges, this.email.valueChanges)
       .pipe(takeUntilDestroyed())
@@ -71,7 +83,7 @@ export class UserAddEditComponent {
     this.userForm = this.fb.group({
       firstName: '',
       lastName: '',
-      email: '',
+      email: this.email,
       createdAt: '',
       description: '',
       tags: '',
@@ -79,13 +91,32 @@ export class UserAddEditComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.userForm.patchValue(this.data);
+  }
+
   onFormSubmit() {
     if (this.userForm.valid) {
-      this.userService.addUser(this.userForm.value).subscribe({
-        next: (val: any) => {
-          this.dialogRef.close(true);
-        },
-      });
+      if (this.data) {
+        this.userService
+          .updateUser(this.data.id, {
+            ...this.userForm.value,
+            id: this.data.id,
+          })
+          .subscribe({
+            next: (val: any) => {
+              this.dialogRef.close(true);
+            },
+          });
+      } else {
+        this.userService.addUser(this.userForm.value).subscribe({
+          next: (val: any) => {
+            this.dialogRef.close(true);
+          },
+        });
+      }
+    } else {
+      this.updateErrorMessage();
     }
   }
 
