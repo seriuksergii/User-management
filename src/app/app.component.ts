@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { MatDialog } from '@angular/material/dialog';
-import { UserAddEditComponent } from './components/user-add-edit/user-add-edit.component';
+import {
+  User,
+  UserAddEditComponent,
+} from './components/user-add-edit/user-add-edit.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { UsersService } from './service/users.service';
 import { ViewChild } from '@angular/core';
@@ -80,6 +83,12 @@ export class AppComponent implements OnInit {
       next: (res) => {
         this.getUsersList();
       },
+    });
+  }
+
+  openEditForm(data: User) {
+    this.dialog.open(UserAddEditComponent, {
+      data,
     });
   }
 }
