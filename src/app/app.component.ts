@@ -16,7 +16,7 @@ import { ConfirmationModalComponent } from './components/confirmation-modal/conf
 import {
   User,
   UserAddEditComponent,
-} from './user-add-edit/user-add-edit.component';
+} from './components/user-add-edit/user-add-edit.component';
 
 @Component({
   selector: 'app-root',

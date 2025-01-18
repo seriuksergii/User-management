@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../user-add-edit/user-add-edit.component';
-
+import { User } from '../components/user-add-edit/user-add-edit.component';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 <div class="modal-container">
   <div mat-dialog-title>
-    <h1>Create new user</h1>
+    <h1 class="title">Create user</h1>
   </div>
   <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content>
@@ -8,12 +8,12 @@
         <mat-label>First Name</mat-label>
         <input matInput type="text" placeholder="Enter your name" required formControlName="firstName">
       </mat-form-field>
-      <div mat-dialog-content>
-        <mat-form-field appearance="outline">
-          <mat-label>Last Name</mat-label>
-          <input matInput type="text" placeholder="Enter your last name" required formControlName="lastName">
-        </mat-form-field>
-      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="Enter your last name" required formControlName="lastName">
+      </mat-form-field>
+
 
       <mat-form-field appearance="outline">
         <mat-label>Enter your email</mat-label>
@@ -40,7 +40,7 @@
       </div>
       <div>
         <mat-form-field appearance="outline">
-          <mat-label>Toppings</mat-label>
+          <mat-label>Tags</mat-label>
           <mat-select [formControl]="tags" multiple>
             @for (tags of tagsList; track tags) {
             <mat-option [value]="tags">{{tags}}</mat-option>

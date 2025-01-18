@@ -24,7 +24,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UsersService } from '../service/users.service';
+import { UsersService } from '../../service/users.service';
+import { MatTableModule } from '@angular/material/table';
 
 export interface User {
   firstName: string;
@@ -48,6 +49,7 @@ export interface User {
     MatSelectModule,
     MatButtonModule,
     MatDialogModule,
+    MatTableModule,
   ],
   templateUrl: './user-add-edit.component.html',
   styleUrl: './user-add-edit.component.scss',
@@ -69,6 +71,8 @@ export class UserAddEditComponent implements OnInit {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
 
   errorMessage = signal('');
+  dataSource: any;
+  displayedColumns: any;
 
   constructor(
     private fb: FormBuilder,
