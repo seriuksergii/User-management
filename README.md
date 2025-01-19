@@ -35,36 +35,44 @@ To run this project locally:
 
 • Reactive Forms
 
-#Tasks Description
-Develop a small CRUD application on the latest version of Angular.
-Create a page that must contain a list, pagination, and a "Create User" button. Get data
-from an attached JSON file and display it on this page. Please use the HttpClient to get the
-data. The JSON file must be located in a public folder.
-The list must contain the following columns:
-• First name
-•Last name
-● Email
-● Created at - format date to MM-DD-YYYY HH:mm
-● Description
-● Tags
-● Actions - Edit (shows the same modal window as "Create User" but with pre-filled
-data), Delete
-On clicking "Create User" and "Edit" buttons, show a modal with a form. Please use
-Angular Reactive Forms. The form must contain the following fields:
-● First name - required, max length 100
-● Last name - required, max length 100
-● Email - required, max length 100, email validation
-● Description - not required, max length 1000
-● Tags - not required, array of strings.
-You can use Angular Material chips or an input field where tags are separated by
-commas, or a multi-select. After adding a user, please push the new object to the array of
-users. After editing, please update the existing user.
-If a field is not valid, please show an error message under the field (standard Material
-error message).
-On clicking "Delete" in the actions column, show a confirmation modal and delete the
-user from the array if confirmed.
-Pagination - show 10 items on the page by default.
-Please use Angular Material for pagination and form elements.
+#Task descriotion:
+
+Develop a small CRUD application using the latest version of Angular. Below are the requirements and features to be implemented:
+
+1. Page Features:
+List of Users: The page must display a list of users with the following columns:
+First Name
+Last Name
+Email
+Created At: Display the date in MM-DD-YYYY HH:mm format
+Description
+Tags
+Actions: Edit and Delete options
+Pagination: Display 10 users per page by default. Use Angular Material for pagination.
+2. CRUD Operations:
+Create User:
+On clicking the "Create User" button, a modal with a form should appear.
+The form should include the following fields:
+First Name: Required, max length 100
+Last Name: Required, max length 100
+Email: Required, max length 100, email validation
+Description: Optional, max length 1000
+Tags: Optional, an array of strings (tags). Can be implemented using Angular Material chips, a multi-select input, or an input field where tags are separated by commas.
+After adding a user, the new user object should be pushed to the users array.
+Edit User:
+On clicking the "Edit" button in the Actions column, a modal with the same form should appear, pre-filled with the existing user data.
+The existing user data should be updated upon form submission.
+Delete User:
+On clicking the "Delete" button in the Actions column, show a confirmation modal.
+If confirmed, the user should be removed from the array.
+3. Form Validation:
+If a field is invalid (e.g., exceeds the max length or fails validation), show an error message under the respective field using Angular Material's standard error message component.
+4. Data Handling:
+HttpClient: Use HttpClient to fetch data from a locally stored JSON file located in the public folder.
+After editing a user, update the existing user in the array.
+5. Additional Notes:
+Please use Angular Material for all form elements, pagination, and dialog modals.
+Implement proper date formatting for the Created At column and ensure proper validation is displayed for each field.
 
 
 
