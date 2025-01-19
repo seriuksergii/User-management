@@ -1,45 +1,5 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "a title",
-      "views": 100
-    },
-    {
-      "id": "2",
-      "title": "another title",
-      "views": 200
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "users": [
-    {
-      "firstName": "Debra",
-      "lastName": "Pratt",
-      "createdAt": "2025-01-13T14:21:05.086760",
-      "tags": [
-        "ten",
-        "mission",
-        "politics"
-      ],
-      "email": "heather05@hotmail.com",
-      "description": "War class them. Brother who necessary might bill.",
-      "id": "828c"
-    },
     {
       "firstName": "Bryan",
       "lastName": "Simmons",
@@ -52,19 +12,6 @@
       "email": "gonzalezpeter@hotmail.com",
       "description": "Wind argue almost many. Nothing table head professional various large market sport.",
       "id": "2590"
-    },
-    {
-      "firstName": "Charles",
-      "lastName": "Anderson",
-      "createdAt": "2025-01-13T14:21:05.087690",
-      "tags": [
-        "ability",
-        "sort",
-        "pay"
-      ],
-      "email": "kmartinez@foster-downs.com",
-      "description": "Where front month fill. Experience election practice statement term condition food mention.",
-      "id": "26f2"
     },
     {
       "firstName": "Tonya",
