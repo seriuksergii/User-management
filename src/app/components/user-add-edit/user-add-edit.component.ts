@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { merge } from 'rxjs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { FormGroup } from '@angular/forms';
@@ -52,6 +53,7 @@ export interface User {
     MatTableModule,
   ],
   templateUrl: './user-add-edit.component.html',
+  providers: [provideNativeDateAdapter()],
   styleUrl: './user-add-edit.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
