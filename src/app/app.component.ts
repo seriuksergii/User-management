@@ -33,6 +33,9 @@ import { User, UserAddEditComponent } from './components/user-add-edit/user-add-
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   displayedColumns: string[] = [
     'firstName',
     'lastName',

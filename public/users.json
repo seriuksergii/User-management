@@ -1,32 +1,6 @@
 {
   "users": [
     {
-      "firstName": "Shelbyqqqqqq",
-      "lastName": "Smith",
-      "email": "westthomas@gonzalez-soto.com",
-      "createdAt": "2025-01-13T14:21:05.089831",
-      "description": "Machine energy foot happy than. Former box fly. Cost machine huge whatever impact camera test.",
-      "tags": [
-        "play",
-        "week",
-        "heavy"
-      ],
-      "id": "cefe"
-    },
-    {
-      "firstName": "Amanda",
-      "lastName": "Campbell",
-      "createdAt": "2025-01-13T14:21:05.090589",
-      "tags": [
-        "receive",
-        "bring",
-        "claim"
-      ],
-      "email": "fmoran@yahoo.com",
-      "description": "Field have wrong read. Build change treat.",
-      "id": "700d"
-    },
-    {
       "firstName": "Kevin",
       "lastName": "Heath",
       "createdAt": "2025-01-13T14:21:05.090971",

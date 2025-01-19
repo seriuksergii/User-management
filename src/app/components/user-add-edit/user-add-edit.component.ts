@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Inject,
-  OnInit,
-  signal,
-} from '@angular/core';
+import { Component, Inject, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   FormBuilder,
@@ -27,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UsersService } from '../../service/users.service';
 import { MatTableModule } from '@angular/material/table';
+import { CommonModule } from '@angular/common';
 
 export interface User {
   id: number;
@@ -51,6 +46,7 @@ export interface User {
     MatButtonModule,
     MatDialogModule,
     MatTableModule,
+    CommonModule,
   ],
   templateUrl: './user-add-edit.component.html',
   providers: [provideNativeDateAdapter()],
@@ -84,12 +80,15 @@ export class UserAddEditComponent implements OnInit {
     );
 
     this.userForm = this.fb.group({
-      firstName: '',
-      lastName: '',
-      email: this.email,
+      firstName: ['', [Validators.required, Validators.maxLength(100)]],
+      lastName: ['', [Validators.required, Validators.maxLength(100)]],
+      email: [
+        '',
+        [Validators.required, Validators.email, Validators.maxLength(100)],
+      ],
       createdAt: '',
-      description: '',
-      tags: [this.tags],
+      description: ['', [Validators.maxLength(1000)]],
+      tags: [[]],
     });
   }
 
