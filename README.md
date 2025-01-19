@@ -7,7 +7,7 @@ To run this project locally:
 
 1.	Clone the Repository:
 
-          [https://github.com/seriuksergii/User-management](https://github.com/seriuksergii/User-management.git)
+        https://github.com/seriuksergii/User-management.git
 
 2.	Navigate to the project directory:
 
