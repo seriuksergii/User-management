@@ -3,6 +3,25 @@
 }
 
 .container {
- width: 1200px;
- margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.toolbar {
+  background-color: #fff;
+  box-shadow: 0px 1px 10px 1px #00000014;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }

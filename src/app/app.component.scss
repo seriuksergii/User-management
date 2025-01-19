@@ -1,16 +1,13 @@
 .container {
   width: 1200px;
   margin: 0 auto;
-  mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 
 .mat-toolbar {
-  background-color: #1e96fc;
-  color: white;
+  background-color: #fff;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tag {
@@ -41,12 +38,10 @@ button[mat-icon-button]:hover {
   color: #1e96fc;
   transition: transform 0.3s ease;
 }
-.header_cell {
-  background-color: #fff;
-}
 
 th {
   color: #1e96fc;
+  font-weight: 500;
 }
 
 table {
@@ -55,5 +50,22 @@ table {
 }
 
 .list-title {
+  font-size: 28px;
+  font-weight: 900;
   color: #000;
+}
+
+.header_cell {
+  background-color: #fff;
+}
+
+button[mat-flat-button] {
+  border-radius: 20px;
+  width: 148px;
+  height: 50px;
+  background-color: #1e96fc;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }

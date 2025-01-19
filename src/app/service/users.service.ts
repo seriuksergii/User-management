@@ -10,18 +10,18 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   addUser(data: User): Observable<any> {
-    return this.http.post('http://localhost:3000/users', data);
+    return this.http.post<User>('http://localhost:3000/users', data);
   }
 
-  updateUser(id: number, data: any): Observable<any> {
-    return this.http.put(`http://localhost:3000/users/${id}`, data);
+  updateUser(id: number, data: User): Observable<any> {
+    return this.http.put<User>(`http://localhost:3000/users/${id}`, data);
   }
 
   getUsersList(): Observable<any> {
-    return this.http.get('http://localhost:3000/users');
+    return this.http.get<User>('http://localhost:3000/users');
   }
 
   deleteUser(id: number): Observable<any> {
-    return this.http.delete(`http://localhost:3000/users/${id}`);
+    return this.http.delete<User>(`http://localhost:3000/users/${id}`);
   }
 }

@@ -29,13 +29,13 @@ import { UsersService } from '../../service/users.service';
 import { MatTableModule } from '@angular/material/table';
 
 export interface User {
+  id: number;
   firstName: string;
   lastName: string;
   email: string;
   createdAt: string;
   description: string;
   tags: string[];
-  actions?: string;
 }
 
 @Component({
@@ -55,7 +55,6 @@ export interface User {
   templateUrl: './user-add-edit.component.html',
   providers: [provideNativeDateAdapter()],
   styleUrl: './user-add-edit.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserAddEditComponent implements OnInit {
   userForm: FormGroup;
@@ -73,18 +72,16 @@ export class UserAddEditComponent implements OnInit {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
 
   errorMessage = signal('');
-  dataSource: any;
-  displayedColumns: any;
 
   constructor(
     private fb: FormBuilder,
     private userService: UsersService,
     private dialogRef: MatDialogRef<UserAddEditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: User
   ) {
-    merge(this.email.statusChanges, this.email.valueChanges)
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => this.updateErrorMessage());
+    merge(this.email.statusChanges, this.email.valueChanges).pipe(
+      takeUntilDestroyed()
+    );
 
     this.userForm = this.fb.group({
       firstName: '',
@@ -92,8 +89,7 @@ export class UserAddEditComponent implements OnInit {
       email: this.email,
       createdAt: '',
       description: '',
-      tags: '',
-      actions: '',
+      tags: [this.tags],
     });
   }
 
@@ -110,29 +106,17 @@ export class UserAddEditComponent implements OnInit {
             id: this.data.id,
           })
           .subscribe({
-            next: (val: any) => {
+            next: () => {
               this.dialogRef.close(true);
             },
           });
       } else {
         this.userService.addUser(this.userForm.value).subscribe({
-          next: (val: any) => {
+          next: () => {
             this.dialogRef.close(true);
           },
         });
       }
-    } else {
-      this.updateErrorMessage();
-    }
-  }
-
-  updateErrorMessage() {
-    if (this.email.hasError('required')) {
-      this.errorMessage.set('You must enter a value');
-    } else if (this.email.hasError('email')) {
-      this.errorMessage.set('Not a valid email');
-    } else {
-      this.errorMessage.set('');
     }
   }
 }

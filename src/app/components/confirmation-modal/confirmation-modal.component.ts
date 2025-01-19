@@ -4,9 +4,11 @@ import { Inject } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
+  selector: 'app-confirmation-modal',
   templateUrl: './confirmation-modal.component.html',
   styleUrls: ['./confirmation-modal.component.scss'],
   imports: [MatDialogModule],
+  standalone: true,
 })
 export class ConfirmationModalComponent {
   constructor(

@@ -13,10 +13,7 @@ import { DatePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
-import {
-  User,
-  UserAddEditComponent,
-} from './components/user-add-edit/user-add-edit.component';
+import { User, UserAddEditComponent } from './components/user-add-edit/user-add-edit.component';
 
 @Component({
   selector: 'app-root',
@@ -36,9 +33,6 @@ import {
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
   displayedColumns: string[] = [
     'firstName',
     'lastName',
@@ -49,7 +43,7 @@ export class AppComponent implements OnInit {
     'action',
   ];
 
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<User>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
