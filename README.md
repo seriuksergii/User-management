@@ -1,28 +1,32 @@
 # UserManagement
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
-
-
 
 Installation
 
 To run this project locally:
 
-Clone the Repository:
+1.	Clone the Repository:
 
- [https://github.com/seriuksergii/User-management](https://github.com/seriuksergii/User-management.git)
+          [https://github.com/seriuksergii/User-management](https://github.com/seriuksergii/User-management.git)
 
-Install dependencies:
+2.	Navigate to the project directory:
 
-  npm install
+         cd user-management
 
-Start the json-server:  
+3.	Install dependencies:
 
-json-server --watch public/users.json
-  
-Start the application:
+          npm install
 
-  npm start
+4.	Start the json-server:  
+
+          json-server --watch public/users.json
+
+5.	Start the application:
+ 
+          npm start   
+
+
+
 Technologies Used:
 
 • This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
@@ -30,3 +34,11 @@ Technologies Used:
 • Angular Material
 
 • Reactive Forms
+
+
+
+
+          
+
+
+
