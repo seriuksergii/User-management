@@ -2,7 +2,7 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
 
-Check out the live demo
+
 
 Installation
 
@@ -25,8 +25,8 @@ Start the application:
   npm start
 Technologies Used:
 
-• React
+• This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
 
-• TypeScript
+• Angular Material
 
-• SCSS
+• Reactive Forms
