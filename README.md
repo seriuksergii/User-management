@@ -10,7 +10,7 @@ To run this project locally:
 
 Clone the Repository:
 
- https://github.com/seriuksergii/User-management
+ [https://github.com/seriuksergii/User-management](https://github.com/seriuksergii/User-management.git)
 
 Install dependencies:
 
