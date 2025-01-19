@@ -78,6 +78,11 @@ After editing a user, update the existing user in the array.
 Please use Angular Material for all form elements, pagination, and dialog modals.
 Implement proper date formatting for the Created At column and ensure proper validation is displayed for each field.
 
+# P.S.
+In this task, I did not have time to solve the following tasks:
+- Problem with deployment in Vercel (the project is deployed, but does not receive data from users.json, although users.json is in the public folder.
+- Problem with adding tags when creating and editing a user.
+
 
 
 
